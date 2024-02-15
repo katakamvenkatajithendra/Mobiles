@@ -1,0 +1,51 @@
+.mob-table{
+    width: 850px;
+    margin-top: 100px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 30px;
+    background-image: linear-gradient(to bottom,rgb(8, 8, 165),white);
+    border-radius: 12px;
+}
+.form-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 100;
+}
+.form{
+    background-image: linear-gradient(rgb(210, 243, 24), rgb(201, 152, 16), rgb(235, 131, 12));
+    width: 800px;
+    padding: 20px 50px;
+    border-radius: 10px;
+    
+}
+.action{
+    display: flex;
+    justify-content: space-between;
+}
+.err{
+    color: red;
+    margin-top: 20%;
+    animation: Animation 1267ms infinite linear;
+}
+@keyframes Animation {
+    to {
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 1.2;
+      letter-spacing: 0px;
+    }
+}
+label{
+    font-size: 15px;
+}

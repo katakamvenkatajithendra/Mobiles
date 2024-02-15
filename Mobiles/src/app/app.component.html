@@ -1,0 +1,51 @@
+<div *ngIf="mobiles;else nodata" class="container mob-table">
+  <div class="header">
+      <h2 class="table-title">Manage Mobiles</h2>
+      <button class="btn btn-success" (click)="addmobile()" *ngIf="!showform">Add mobile</button>
+  </div>
+  <table class="table text-center table-striped">
+    <thead>
+    <tr>
+      <th>Mobile</th>
+      <th>Price(Rs)</th>
+      <th>RAM</th>
+      <th>Storage</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody class="text-center">
+    <tr *ngFor="let m of mobiles">
+        <td>{{m['name']}}</td>
+        <td>{{m['price']}}</td>
+        <td>{{m['ram']}}</td>
+        <td>{{m['storage']}}</td>
+        <td><button class="btn btn-primary" (click)="editform()" *ngIf="!showform">Edit</button></td>
+        <td><button class="btn btn-danger" (click)="delete(m['id'])">Delete</button></td> 
+    </tr>
+
+  </tbody>
+
+  </table>
+</div>
+<ng-template #nodata>
+  <p class="err text-center">No data fetched</p>
+</ng-template>
+
+<div class="form-wrapper" *ngIf="fullform">
+  <form class="form">
+    <h2 class="text-center">{{Formname}}</h2>
+    <label>Name</label>
+    <input type="text" class="form-control">
+    <label>Price(Rs)</label>
+    <input type="text" class="form-control">
+    <label>RAM</label>
+    <input type="text" class="form-control">
+    <label>Storage</label>
+    <input type="text" class="form-control">
+    <div class="action mt-5">
+    <button class="btn btn-danger" (click)="close()">Close</button>
+    <button class="btn btn-success" (click)="save()">Save</button>
+  </div>
+  </form>
+</div>
